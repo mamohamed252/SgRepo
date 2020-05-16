@@ -35,5 +35,6 @@ public class ScannerTest {
         System.out.println("Number of computers:" + numComputers);
         System.out.println("Hometown: " + hometown);
     }
-    
+      //While
+     
 }
