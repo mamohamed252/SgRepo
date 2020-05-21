@@ -1,9 +1,12 @@
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\App.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\dao\ClassRosterDao.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\ui\UserIOConsoleImpl.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\controller\ClassRosterController.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\dao\ClassRosterDaoException.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\dao\ClassRosterDaoFileImpl.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\dto\Student.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\ui\UserIO.java
-C:\Users\Mohamed\Documents\NetBeansProjects\ClassRoster\src\main\java\com\mycompany\classroster\ui\ClassRosterView.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\ui\ClassRosterView.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\dao\ClassRosterDao.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\service\ClassRosterServiceLayer.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\App.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\service\ClassRosterDuplicateIdException.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\dto\Student.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\dao\ClassRosterDaoFileImpl.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\controller\ClassRosterController.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\dao\ClassRosterPersistenceException.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\service\ClassRosterDataValidationException.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\ui\UserIO.java
+C:\Users\Mohamed\Desktop\SG Course\Assignments\SgRepo\Module 2 finished\ClassRoster\src\main\java\com\mycompany\classroster\ui\UserIOConsoleImpl.java

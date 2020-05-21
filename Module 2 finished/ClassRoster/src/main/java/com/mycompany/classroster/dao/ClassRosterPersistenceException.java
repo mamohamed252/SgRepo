@@ -9,11 +9,11 @@ package com.mycompany.classroster.dao;
  *
  * @author Mohamed
  */
-public class ClassRosterDaoException extends Exception{
-    public ClassRosterDaoException(String message){
+public class ClassRosterPersistenceException extends Exception{
+    public ClassRosterPersistenceException(String message){
         super(message);
     }
-    public ClassRosterDaoException(String message, Throwable cause){
+    public ClassRosterPersistenceException(String message, Throwable cause){
         super(message, cause);
     }
 }
