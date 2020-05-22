@@ -23,7 +23,7 @@ public class DvdView {
         io.print("3. Edit DVD");
         io.print("4. List all DVDs");
         io.print("5. View a DVD information");
-        io.print("6. Exist");
+        io.print("6. Exit");
 
         return io.readInt("Please select from the above choices.", 1, 11);
     }
@@ -34,12 +34,14 @@ public class DvdView {
         String mpaaRating = io.readString("Please enter MPAA rating");
         String directorName = io.readString("Please enter director name");
         String movieStudio = io.readString("Please enter movie studio");
+        String userRating = io.readString("Please enter rating");
 
         Dvd currentDvd = new Dvd(dvdName);
         currentDvd.setReleasedYear(releasedYear);
         currentDvd.setMpaaRating(mpaaRating);
         currentDvd.setDirectorName(directorName);
         currentDvd.setMovieStudio(movieStudio);
+        currentDvd.setUserRating(userRating);
 
         return currentDvd;
     }
@@ -55,12 +57,13 @@ public class DvdView {
 
     public void displayDvdList(List<Dvd> dvdList) {
         for (Dvd currentDvd : dvdList) {
-            String dvdInfo = String.format("#%s : %s %s %s",
+            String dvdInfo = String.format("%s : %s %s %s %s",
                     currentDvd.getDvdName(),
                     currentDvd.getReleasedYear(),
                     currentDvd.getDirectorName(),
                     currentDvd.getMovieStudio(),
                     currentDvd.getMpaaRating());
+                    currentDvd.getUserRating();
             io.print(dvdInfo);
 
         }
@@ -72,7 +75,7 @@ public class DvdView {
     }
 
     public void displayDisplayDvdBanner() {
-        io.print("=== Display Student ===");
+        io.print("=== Display DVD's ===");
     }
 
     public String getDvdNameChoice() {
@@ -85,7 +88,7 @@ public class DvdView {
             io.print(dvd.getReleasedYear() + " " + dvd.getDirectorName());
             io.print(dvd.getMpaaRating());
             io.print(dvd.getUserRating());
-            io.print("");
+           
         } else {
             io.print("Invalid title.");
         }
