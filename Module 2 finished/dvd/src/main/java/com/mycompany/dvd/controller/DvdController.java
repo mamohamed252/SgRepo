@@ -56,7 +56,7 @@ public class DvdController {
                         viewDvd();
                         break;
                     case 6:
-                        io.print("Exit");
+                      keepGoing = false;
                         break;
 
                     default:

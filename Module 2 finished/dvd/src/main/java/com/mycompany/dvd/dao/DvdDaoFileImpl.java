@@ -91,6 +91,8 @@ public class DvdDaoFileImpl implements DvdDao {
         dvdFromFile.setDirectorName(dvdTokens[3]);
         
          dvdFromFile.setMovieStudio(dvdTokens[4]);
+        
+         dvdFromFile.setUserRating(dvdTokens[5]);
          
          
 
@@ -150,7 +152,8 @@ public class DvdDaoFileImpl implements DvdDao {
          dvdAsText += aDvd.getDirectorName() + DELIMITER;
 
         // Cohort - don't forget to skip the DELIMITER here.
-        dvdAsText += aDvd.getMovieStudio();
+        dvdAsText += aDvd.getMovieStudio() + DELIMITER;
+        dvdAsText += aDvd.getUserRating(); 
 
         // We have now turned a student to text! Return it!
         return dvdAsText;
