@@ -6,9 +6,9 @@
 package com.mycompany.lessons;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Locale;
 
 /**
  *
@@ -48,6 +48,25 @@ public class DateTimeAPI {
         
         
         //Future Past and Date difference
+       //subtracting days
+        LocalDate past = ld.minusDays(8);
+        formatted = past.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
+        System.out.println(formatted);
+        
+        // minus months
+        past = ld.minusMonths(3);
+        formatted = past.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
+        System.out.println(formatted);
+        
+        Period diff = ld.until(past);
+        System.out.println(diff);
+        System.out.println(diff.getMonths());
+        
+        // positive
+        diff = past.until(ld);
+        System.out.println(diff.getMonths());
+        
+        
     }
     
 }
