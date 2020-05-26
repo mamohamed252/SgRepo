@@ -5,8 +5,6 @@
  */
 package com.mycompany.sgex.module1;
 
-
-
 /**
  *
  * @author Mohamed
@@ -48,12 +46,19 @@ public class SummativeSums {
         int lengthOfArray3 = array3.length;
 
         for (int i = 0; i < lengthOfArray3; i++) {
-            sum3 = sum3 + array1[i];
+            sum3 = sum3 + array3[i];
 
         }
         System.out.println("Total of Array # 1 is: " + sum1);
         System.out.println("Total of Array # 1 is: " + sum2);
         System.out.println("Total of Array # 1 is: " + sum3);
-    }
+        ///// How to reverse Array backwards 
+        int[] array7 = {7, 8, 1, 2};
 
+        int lengthOfArray7 = array7.length;
+        for (int i = lengthOfArray7 - 1; i >= 0; i--) {
+            System.out.println(array7[i]);
+
+        }
+    }
 }
