@@ -50,18 +50,6 @@ public class GuessState {
         userGuess = sc.nextLine();
         System.out.println(userGuess);
         System.out.println("=========");
-        // using an if statement within if statment.
-//        if (capitals.containsKey(userChoice)) {
-//            // if the userGuess (value) 
-//            // is equal to capital.get() (value of key gieven) checking value for userChoice (State)
-//            if (userGuess.equals(capitals.get(userChoice))) {
-//                System.out.println("Correct");
-//            } else {
-//                System.out.println("Incorrect, please check spelling. Case Sensitive");
-//
-//            }
-//
-//        }
 
 // For loop extra work
         if (userGuess.equals(capitals.get(userChoice))) {
