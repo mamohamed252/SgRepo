@@ -24,7 +24,7 @@ public class ClassRosterController {
 
     private ClassRosterView view;
     private ClassRosterServiceLayer service;
-    private UserIO io = new UserIOConsoleImpl();
+  
 
     // Being called to App as injection 
     public ClassRosterController(ClassRosterServiceLayer service, ClassRosterView view) {
