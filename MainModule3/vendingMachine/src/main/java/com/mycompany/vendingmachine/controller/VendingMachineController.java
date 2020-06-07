@@ -7,6 +7,7 @@ package com.mycompany.vendingmachine.controller;
 
 import com.mycompany.vendingmachine.dao.VendingMachineDaoException;
 import com.mycompany.vendingmachine.dto.Snack;
+import com.mycompany.vendingmachine.servicelayer.NoItemInventoryException;
 import com.mycompany.vendingmachine.servicelayer.VendingMachineService;
 import com.mycompany.vendingmachine.ui.VendingMachineView;
 import java.util.List;
@@ -34,9 +35,9 @@ public class VendingMachineController {
             displayExitBanner();
             endTask();
 
-        } catch (VendingMachineDaoException e) {
+        } catch (VendingMachineDaoException | NoItemInventoryException e) {
             // display error message
-
+            // | vertical or sign
         }
 // method that displays items
 // method that asks for item 
@@ -56,12 +57,14 @@ public class VendingMachineController {
     }
 
     public void getUserCost() {
-        view.getCost();
+        view.getUserCost();
 
     }
 
-    public void getUserSnack() {
-        view.getUserSnack();
+    public void getUserSnack() throws NoItemInventoryException, VendingMachineDaoException{
+     String userSnackChoice = view.getUserSnack();
+     Snack snackString = service.getUserChoice(userSnackChoice); 
+        System.out.println(snackString.getInventory());
     }
     
     public void displayExitBanner() {

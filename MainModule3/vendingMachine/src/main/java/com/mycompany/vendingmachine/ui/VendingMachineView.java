@@ -43,7 +43,7 @@ public class VendingMachineView {
         return io.readString("Please select from the above choices. Case sensitive.");
     }
     
-    public double getCost(){
+    public double getUserCost(){
        return io.readDouble("Please enter your change.", 0,34);
     }
     

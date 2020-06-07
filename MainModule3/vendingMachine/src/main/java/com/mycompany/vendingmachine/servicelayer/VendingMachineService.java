@@ -19,11 +19,13 @@ public interface VendingMachineService {
             throws VendingMachineDaoException;
 
     Snack changeQuantity(String snackName)
-            throws NoItemInventoryException;
+            throws NoItemInventoryException, VendingMachineDaoException;
     
     Snack getUserCost()
             throws InsufficientFundsException;
     
+    Snack getUserChoice(String userChoice)
+            throws NoItemInventoryException, VendingMachineDaoException;
     
 
 }
