@@ -18,8 +18,8 @@ public interface VendingMachineDao {
     List<Snack> getAllSnacks()
             throws VendingMachineDaoException;
     Snack changeQuantity(String snackName)
-            throws NoItemInventoryException;
+            throws NoItemInventoryException, VendingMachineDaoException;
     Snack getUserCost()
             throws InsufficientFundsException;
-    
+     
 }

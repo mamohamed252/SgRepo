@@ -38,8 +38,12 @@ public class VendingMachineFileImpl implements VendingMachineDao {
     }
 
     @Override
-    public Snack changeQuantity(String snackName) throws NoItemInventoryException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Snack changeQuantity(String snackName) throws NoItemInventoryException, VendingMachineDaoException {
+        Snack snackObject = snacks.get(snackName);
+        snackObject.setInventory(snackObject.getInventory() -1);
+        //snacks.get(snackName).setInventory(snacks.get(snackName).getInventory() -1);
+        writeSnack();
+        return snackObject;
     }
     
     @Override

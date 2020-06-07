@@ -31,14 +31,19 @@ public class VendingMachineServiceLayerImpl implements VendingMachineService {
     }
 
     @Override
-    public Snack changeQuantity(String snackName) throws NoItemInventoryException {
-    
+    public Snack changeQuantity(String snackName) throws NoItemInventoryException, VendingMachineDaoException {
+        
         return dao.changeQuantity(snackName);
     }
 
     @Override
     public Snack getUserCost() throws InsufficientFundsException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Snack getUserChoice(String userChoice) throws NoItemInventoryException, VendingMachineDaoException {
+        return dao.changeQuantity(userChoice);
     }
     
 }
