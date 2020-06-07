@@ -29,7 +29,9 @@ public class VendingMachineController {
     public void run() {
         try {
             displaySnack();
-            getChange();
+            getUserCost();
+            getUserSnack();
+            displayExitBanner();
             endTask();
 
         } catch (VendingMachineDaoException e) {
@@ -53,8 +55,17 @@ public class VendingMachineController {
 //       
     }
 
-    public void getChange() {
+    public void getUserCost() {
+        view.getCost();
 
+    }
+
+    public void getUserSnack() {
+        view.getUserSnack();
+    }
+    
+    public void displayExitBanner() {
+        view.displayExitBanner();
     }
 
     public void endTask() {

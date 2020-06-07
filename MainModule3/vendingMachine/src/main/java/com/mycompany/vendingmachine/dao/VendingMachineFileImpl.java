@@ -6,6 +6,7 @@
 package com.mycompany.vendingmachine.dao;
 
 import com.mycompany.vendingmachine.dto.Snack;
+import com.mycompany.vendingmachine.servicelayer.InsufficientFundsException;
 import com.mycompany.vendingmachine.servicelayer.NoItemInventoryException;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -38,6 +39,11 @@ public class VendingMachineFileImpl implements VendingMachineDao {
 
     @Override
     public Snack changeQuantity(String snackName) throws NoItemInventoryException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public Snack getUserCost() throws InsufficientFundsException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -95,4 +101,6 @@ public class VendingMachineFileImpl implements VendingMachineDao {
         }
         out.close();
     }
+
+    
 }

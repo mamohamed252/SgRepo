@@ -35,5 +35,10 @@ public class VendingMachineServiceLayerImpl implements VendingMachineService {
     
         return dao.changeQuantity(snackName);
     }
+
+    @Override
+    public Snack getUserCost() throws InsufficientFundsException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
