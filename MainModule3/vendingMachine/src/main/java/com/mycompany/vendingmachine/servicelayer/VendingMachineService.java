@@ -20,5 +20,10 @@ public interface VendingMachineService {
 
     Snack changeQuantity(String snackName)
             throws NoItemInventoryException;
+    
+    Snack getUserCost()
+            throws InsufficientFundsException;
+    
+    
 
 }

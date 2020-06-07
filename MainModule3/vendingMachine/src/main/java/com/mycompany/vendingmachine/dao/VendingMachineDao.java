@@ -6,6 +6,7 @@
 package com.mycompany.vendingmachine.dao;
 
 import com.mycompany.vendingmachine.dto.Snack;
+import com.mycompany.vendingmachine.servicelayer.InsufficientFundsException;
 import com.mycompany.vendingmachine.servicelayer.NoItemInventoryException;
 import java.util.List;
 
@@ -18,5 +19,7 @@ public interface VendingMachineDao {
             throws VendingMachineDaoException;
     Snack changeQuantity(String snackName)
             throws NoItemInventoryException;
+    Snack getUserCost()
+            throws InsufficientFundsException;
     
 }
