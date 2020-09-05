@@ -17,6 +17,7 @@ public class InterestCalculator {
     Scanner sc = new Scanner(System.in);
     String input;
         System.out.println("How much do you want to invest?");
+    //hello
     }
     
     
