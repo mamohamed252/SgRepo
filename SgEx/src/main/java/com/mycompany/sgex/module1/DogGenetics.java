@@ -39,7 +39,7 @@ public class DogGenetics {
                 breedPercent = startPercent;
 
             }
-            System.out.println(breed + ":" + breedPercent + "%");
+            System.out.println(breedPercent + "% " + breed + ":" );
 
         }
         System.out.println("WOW, that is QUITE the dog!!");
