@@ -38,6 +38,10 @@ public class App {
         
         Icecream myChoiceTwo = new Icecream("Vanilla");
         System.out.println(myChoiceTwo.getFlavors());
+        
+        Square firstShape = new Square();
+        firstShape.getArea(5, 5);
+        firstShape.getPerimeter(5);
     }
     
 }
