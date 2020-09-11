@@ -10,7 +10,8 @@ package moduletwoparttwo;
  * @author Mohamed
  */
 public interface UserIO {
-       void print(String message);
+
+    void print(String message);
 
     String readString(String prompt);
 
@@ -29,5 +30,5 @@ public interface UserIO {
     long readLong(String prompt);
 
     long readLong(String prompt, long min, long max);
-    
+
 }
