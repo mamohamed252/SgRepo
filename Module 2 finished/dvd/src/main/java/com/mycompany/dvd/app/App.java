@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.dvd;
+package com.mycompany.dvd.app;
 
 import com.mycompany.dvd.controller.DvdController;
 import com.mycompany.dvd.dao.DvdDao;

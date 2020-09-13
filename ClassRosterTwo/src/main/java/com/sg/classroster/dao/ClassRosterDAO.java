@@ -5,10 +5,21 @@
  */
 package com.sg.classroster.dao;
 
+import com.sg.classroster.dto.Student;
+import java.util.List;
+
 /**
  *
  * @author Mohamed
  */
-public class ClassRosterDAO {
-    
+public interface ClassRosterDAO {
+
+    Student addStudent(String studentId, Student student) throws ClassRosterDAOException;
+
+    List<Student> getAllStudents() throws ClassRosterDAOException;
+
+    Student getStudent(String studentId) throws ClassRosterDAOException;
+
+    Student removeStudent(String studentId) throws ClassRosterDAOException;
+
 }
