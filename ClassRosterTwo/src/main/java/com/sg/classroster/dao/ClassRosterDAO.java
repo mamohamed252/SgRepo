@@ -14,12 +14,12 @@ import java.util.List;
  */
 public interface ClassRosterDAO {
 
-    Student addStudent(String studentId, Student student) throws ClassRosterDAOException;
+    Student addStudent(String studentId, Student student) throws ClassRosterPersistenceException;
 
-    List<Student> getAllStudents() throws ClassRosterDAOException;
+    List<Student> getAllStudents() throws ClassRosterPersistenceException;
 
-    Student getStudent(String studentId) throws ClassRosterDAOException;
+    Student getStudent(String studentId) throws ClassRosterPersistenceException;
 
-    Student removeStudent(String studentId) throws ClassRosterDAOException;
+    Student removeStudent(String studentId) throws ClassRosterPersistenceException;
 
 }

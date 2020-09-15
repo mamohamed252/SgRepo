@@ -3,18 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.classroster.dao;
+package com.sg.classroster.service;
 
 /**
  *
  * @author Mohamed
  */
-public class ClassRosterDAOException extends Exception{
-    public ClassRosterDAOException(String message){
+public class ClassRosterDataValidationException extends Exception {
+
+    public ClassRosterDataValidationException(String message) {
         super(message);
     }
-    public ClassRosterDAOException(String message, Throwable cause){
+
+    public ClassRosterDataValidationException(String message,
+            Throwable cause) {
         super(message, cause);
     }
-   
+
 }
