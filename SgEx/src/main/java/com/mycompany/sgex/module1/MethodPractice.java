@@ -19,8 +19,8 @@ public class MethodPractice {
     }
 
     public static int addTwoNumbers(int x, int y) {
-        x = 5;
-        y = 2;
+        
+      
         return x + y;
     }
 
