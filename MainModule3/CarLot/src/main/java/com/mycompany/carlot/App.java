@@ -5,10 +5,15 @@
  */
 package com.mycompany.carlot;
 
+import com.mycompany.carlot.controller.CarLotController;
+
 /**
  *
  * @author Mohamed
  */
 public class App {
-    
+    public static void main(String[] args) {
+        CarLotController controller = new CarLotController();
+        controller.run();
+    }   
 }

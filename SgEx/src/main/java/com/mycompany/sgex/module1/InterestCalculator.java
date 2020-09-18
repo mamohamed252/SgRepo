@@ -5,6 +5,8 @@
  */
 package com.mycompany.sgex.module1;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 /**
@@ -12,51 +14,51 @@ import java.util.Scanner;
  * @author Mohamed
  */
 public class InterestCalculator {
+
     public static void main(String[] args) {
-       int howMuch;
-       int howManyYears;
-       Double annualGrowthPercent;
-              
-    Scanner sc = new Scanner(System.in);
-    String input;
+
+        Scanner sc = new Scanner(System.in);
+        String input;
         System.out.print("How much do you want to invest?");
-    input = sc.nextLine();
-        System.out.println(input);
-    howMuch = Integer.parseInt(input);
+        input = sc.nextLine();
+        BigDecimal howMuch = new BigDecimal(input);
+        System.out.println(howMuch);
+
         System.out.print("How many years are investing?");
         input = sc.nextLine();
-    howManyYears = Integer.parseInt(input);
-        System.out.println(input);
+        int howManyYears = Integer.parseInt(input);
+        System.out.println(howManyYears);
+
         System.out.print("What is the annual interest rate % growth?");
         input = sc.nextLine();
-        annualGrowthPercent = Double.parseDouble(input);
-        System.out.println(input);
+        BigDecimal annualGrowthPercent = new BigDecimal(input);
+        System.out.println(annualGrowthPercent);
         System.out.println("Calculating...");
         year(howManyYears, howMuch, annualGrowthPercent);
-        
-    }
-    public static void year(int howManyYears, int howMuch, double annualGrowthPercent){
-        double beganWith = howMuch;
-        double endedWith= beganWith * (1 + (annualGrowthPercent / 100) );
-        double earned = (beganWith * annualGrowthPercent/100) ;
-       
 
-        
-        
-        for (int i = 0; i<= howManyYears; i++){
-     
-            if (i <= howManyYears)
-                earned = beganWith * (annualGrowthPercent/100) ;
-                System.out.println("Year " + i + ":");
-                System.out.println("Began with " + beganWith);
-                System.out.println("Earned " + (earned));
-                System.out.println("Ended with " + endedWith + "\n");
-                beganWith += earned;
-                endedWith += earned;
-            
-        }
-        
     }
-    
-    
+
+    public static void year(int howManyYears, BigDecimal howMuch, BigDecimal annualGrowthPercent) {
+        BigDecimal oneHundred = new BigDecimal("100.00");
+        BigDecimal one = new BigDecimal("1.00");
+        BigDecimal beganWith = howMuch;
+        BigDecimal endedWith = (annualGrowthPercent.divide(oneHundred.add(one), 2, RoundingMode.HALF_UP).multiply(beganWith));
+        BigDecimal earned = (annualGrowthPercent.divide(oneHundred, 2, RoundingMode.HALF_UP)).multiply(beganWith);
+        // BigDecima earned = (beganWith * annualGrowthPercent/100) ;
+
+        for (int i = 0; i <= howManyYears; i++) {
+
+            if (i <= howManyYears) {
+                earned = (annualGrowthPercent.divide(oneHundred)).multiply(beganWith);
+                System.out.println("Year " + i + ":");
+                System.out.println("Began with " + beganWith.setScale(2, RoundingMode.HALF_UP));
+                System.out.println("Earned " + (earned).setScale(2, RoundingMode.HALF_UP));
+                System.out.println("Ended with " + endedWith.setScale(2, RoundingMode.HALF_UP) + "\n");
+                beganWith = beganWith.add(earned);
+                endedWith = endedWith.add(earned);
+            }
+
+        }
+    }
+
 }
