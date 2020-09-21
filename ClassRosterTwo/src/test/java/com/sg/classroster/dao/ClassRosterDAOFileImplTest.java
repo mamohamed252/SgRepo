@@ -33,6 +33,9 @@ public class ClassRosterDAOFileImplTest {
         new FileWriter(testFile);
         testDao = new ClassRosterDAOFileImpl(testFile);
     }
+
+    
+
     @Test
     public void testGetSudent() throws Exception{
         Student newStudent = new Student("1");
