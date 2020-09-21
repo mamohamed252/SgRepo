@@ -73,7 +73,8 @@ public class VendingMachineController {
         Snack snackObject = service.getSnack(snackName);
         BigDecimal snackCost = snackObject.getPrice();
         BigDecimal change = service.priceChecker(userCostBD, snackCost);
-        view.getChange(change);
+        List<BigDecimal> coins = service.coins(change);
+        view.getChange(coins);
         removeSnack(snackName);
     }
     

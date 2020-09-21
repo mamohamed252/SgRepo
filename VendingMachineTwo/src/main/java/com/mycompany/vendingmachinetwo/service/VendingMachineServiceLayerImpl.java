@@ -11,6 +11,7 @@ import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOFileImpl;
 import com.mycompany.vendingmachinetwo.DTO.Snack;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -22,17 +23,29 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
 
     @Override
     public BigDecimal priceChecker(BigDecimal userInput, BigDecimal inventoryPrice) {
+        if (userInput.compareTo(inventoryPrice) == 1) {
+            return (userInput.subtract(inventoryPrice).abs());
+        } else if (userInput.compareTo(inventoryPrice) == -1) {
+            return (inventoryPrice.subtract(userInput).abs());
+        } else {
+            BigDecimal zero = new BigDecimal("0");
+            return zero;
+        }
+    }
+
+    @Override
+    public Snack getSnack(String name) throws VendingMachineDAOException {
+        Snack getSnack = dao.getSnack(name);
+        return getSnack;
+    }
+
+    @Override
+    public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Snack getSnack(String name)throws VendingMachineDAOException {
-    Snack getSnack = dao.getSnack(name);
-    return getSnack;
-    } 
-
-    @Override
-    public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException {
+    public List<BigDecimal> coins(BigDecimal change) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

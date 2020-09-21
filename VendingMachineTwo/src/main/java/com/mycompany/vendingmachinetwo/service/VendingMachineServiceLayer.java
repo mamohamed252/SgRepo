@@ -9,6 +9,7 @@ import com.mycompany.vendingmachinetwo.DAO.NoItemInventoryException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOException;
 import com.mycompany.vendingmachinetwo.DTO.Snack;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -21,4 +22,6 @@ public interface VendingMachineServiceLayer {
     public Snack getSnack(String name)throws VendingMachineDAOException;
     
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException;
+    
+    public List<BigDecimal> coins(BigDecimal change);
 }
