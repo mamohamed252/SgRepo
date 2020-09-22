@@ -44,7 +44,7 @@ public class VendingMachineView {
     public double getUserCost() {
         return io.readDouble("Please enter your change: ");
     }
-     public void getChange(List<BigDecimal> coins) {
+     public void getChange(List<Integer> coins) {
     io.print(coins.toString());
     }
      

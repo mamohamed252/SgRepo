@@ -19,7 +19,7 @@ import com.mycompany.vendingmachinetwo.controller.VendingMachineController;
  */
 public class VendingMachineApp {
 
-    public static void main(String[] args) throws VendingMachineDAOException {
+    public static void main(String[] args){
         UserIO myIo = new UserIOConsoleImpl();
         VendingMachineView myView = new VendingMachineView(myIo);
         VendingMachineDAO myDao = new VendingMachineDAOFileImpl();
