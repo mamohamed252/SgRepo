@@ -23,5 +23,5 @@ public interface VendingMachineServiceLayer {
     
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException;
     
-    public List<BigDecimal> coins(BigDecimal change);
+    public List<Integer> coins(BigDecimal change);
 }
