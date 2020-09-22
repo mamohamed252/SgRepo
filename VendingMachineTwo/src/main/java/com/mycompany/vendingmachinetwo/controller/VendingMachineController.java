@@ -43,6 +43,8 @@ public class VendingMachineController {
             exitMessage();
 
         }catch( VendingMachineDAOException | NoItemInventoryException e){
+            // add to view
+            System.out.println(e.getMessage());
             
         }
     }

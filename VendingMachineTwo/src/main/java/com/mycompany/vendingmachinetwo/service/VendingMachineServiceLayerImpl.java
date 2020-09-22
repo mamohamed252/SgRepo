@@ -43,6 +43,13 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
     @Override
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException {
         Snack removeSnack = dao.removeSnack(name);
+        if(removeSnack.getInventory() < 0 ){
+            // this makes inventory not go negative.
+            removeSnack.setInventory(1);
+             dao.removeSnack(name);
+           throw new NoItemInventoryException("Snack not available"); 
+        }
+       
         return removeSnack;
     }
 
