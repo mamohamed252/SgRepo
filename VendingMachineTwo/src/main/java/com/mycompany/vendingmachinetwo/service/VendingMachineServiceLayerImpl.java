@@ -5,11 +5,13 @@
  */
 package com.mycompany.vendingmachinetwo.service;
 
+import com.mycompany.vendingmachinetwo.DAO.InsufficientFundsException;
 import com.mycompany.vendingmachinetwo.DAO.NoItemInventoryException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAO;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOFileImpl;
 import com.mycompany.vendingmachinetwo.DTO.Snack;
+import com.mycompany.vendingmachinetwo.UI.VendingMachineView;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,18 +22,23 @@ import java.util.List;
  */
 public class VendingMachineServiceLayerImpl implements VendingMachineServiceLayer {
 
-    VendingMachineDAO dao = new VendingMachineDAOFileImpl();
+    public VendingMachineServiceLayerImpl(VendingMachineDAO dao) {
+        this.dao = dao;
+    }
+
+    private VendingMachineDAO dao;
 
     @Override
-    public BigDecimal priceChecker(BigDecimal userInput, BigDecimal inventoryPrice) {
+    public BigDecimal priceChecker(BigDecimal userInput, BigDecimal inventoryPrice) throws InsufficientFundsException {
         if (userInput.compareTo(inventoryPrice) == 1) {
             return (userInput.subtract(inventoryPrice).abs());
         } else if (userInput.compareTo(inventoryPrice) == -1) {
-            return (inventoryPrice.subtract(userInput).abs());
+            throw new InsufficientFundsException("Enter Correct Change");
         } else {
             BigDecimal zero = new BigDecimal("0");
             return zero;
         }
+
     }
 
     @Override
@@ -43,13 +50,14 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
     @Override
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException {
         Snack removeSnack = dao.removeSnack(name);
-        if(removeSnack.getInventory() < 0 ){
+        if (removeSnack.getInventory() < 0) {
             // this makes inventory not go negative.
             removeSnack.setInventory(1);
-             dao.removeSnack(name);
-           throw new NoItemInventoryException("Snack not available"); 
+            dao.removeSnack(name);
+
+            throw new NoItemInventoryException("Snack not available");
         }
-       
+
         return removeSnack;
     }
 
@@ -73,20 +81,22 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
         // if coinsReturn value is equal to or less than .9
         // if coinsReturn value is equal to or less than .4
         while ((change.compareTo(new BigDecimal("0"))) == 1) {
-            
+
             if (change.compareTo(quarter) == 1 || change.compareTo(quarter) == 0) {
                 counterQuarter++;
                 change = change.subtract(quarter);
             } else if (change.compareTo(dime) == 1 || change.compareTo(dime) == 0) {
                 counterDime++;
                 change.subtract(dime);
-
+                change = change.subtract(dime);
             } else if (change.compareTo(nickel) == 1 || change.compareTo(nickel) == 0) {
                 counterNickel++;
                 change.subtract(nickel);
+                change = change.subtract(nickel);
             } else {
                 counterPenny++;
                 change.subtract(penny);
+                change = change.subtract(penny);
             }
 
         }
@@ -96,5 +106,10 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
         coinsReturn.add(counterNickel);
         coinsReturn.add(counterPenny);
         return coinsReturn;
+    }
+
+    @Override
+    public List<Snack> getAllSnacks() throws VendingMachineDAOException {
+        return dao.getAllSnacks();
     }
 }

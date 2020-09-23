@@ -20,8 +20,6 @@ public class VendingMachineView {
     }
     private UserIO io;
 
- 
-
     public void displaySnackList(List<Snack> snackList) {
         String snackInfo = "";
         for (Snack selectedSnack : snackList) {
@@ -31,7 +29,7 @@ public class VendingMachineView {
                     selectedSnack.getInventory());
             io.print(snackInfo);
         }
-       
+
     }
 
     public String getSnackName() {
@@ -44,10 +42,12 @@ public class VendingMachineView {
     public double getUserCost() {
         return io.readDouble("Please enter your change: ");
     }
-     public void getChange(List<Integer> coins) {
-    io.print(coins.toString());
+
+    public void getChange(List<Integer> coins) {
+
+        io.print("Quarter: " + coins.get(0) + " Dime: " + coins.get(1)
+                + " Nickle: " + coins.get(2) + " Penny: " + coins.get(3));
     }
-     
 
     public void displayAllSnacksBanner() {
         io.print("=== Display All Snacks ==");
@@ -65,8 +65,17 @@ public class VendingMachineView {
         io.print("Unknown Command!!!");
     }
 
+    public void displaySnackNotAvailable(BigDecimal change) {
+        io.print("Change returned" + "$ " + change.toString());
+        io.print("Snack not available!!!");
+    }
+
     public void displayErrorMessage(String errorMsg) {
         io.print("=== Error ===");
         io.print(errorMsg);
+    }
+    public void displayException(String exception){
+        io.print(exception);
+        
     }
 }

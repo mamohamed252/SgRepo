@@ -5,6 +5,7 @@
  */
 package com.mycompany.vendingmachinetwo.service;
 
+import com.mycompany.vendingmachinetwo.DAO.InsufficientFundsException;
 import com.mycompany.vendingmachinetwo.DAO.NoItemInventoryException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOException;
 import com.mycompany.vendingmachinetwo.DTO.Snack;
@@ -17,11 +18,12 @@ import java.util.List;
  */
 public interface VendingMachineServiceLayer {
 
-    public BigDecimal priceChecker(BigDecimal userInput, BigDecimal inventoryPrice);
+    public BigDecimal priceChecker(BigDecimal userInput, BigDecimal inventoryPrice)throws InsufficientFundsException;
 
     public Snack getSnack(String name)throws VendingMachineDAOException;
     
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException;
     
     public List<Integer> coins(BigDecimal change);
+    public List<Snack> getAllSnacks()throws VendingMachineDAOException;
 }
