@@ -53,6 +53,7 @@ public class VendingMachineDAOFileImpl implements VendingMachineDAO {
 
     @Override
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException {
+        loadSnack();
         Snack removeSnackCount = snacks.get(name);
         removeSnackCount.setInventory(removeSnackCount.getInventory() - 1);
         writeSnack();
