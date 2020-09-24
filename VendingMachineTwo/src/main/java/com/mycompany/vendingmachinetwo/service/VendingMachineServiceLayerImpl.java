@@ -7,6 +7,7 @@ package com.mycompany.vendingmachinetwo.service;
 
 import com.mycompany.vendingmachinetwo.DAO.InsufficientFundsException;
 import com.mycompany.vendingmachinetwo.DAO.NoItemInventoryException;
+import com.mycompany.vendingmachinetwo.DAO.VendingMachineAuditDAO;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAO;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOFileImpl;
@@ -21,11 +22,13 @@ import java.util.List;
  * @author Mohamed
  */
 public class VendingMachineServiceLayerImpl implements VendingMachineServiceLayer {
+   
 
-    public VendingMachineServiceLayerImpl(VendingMachineDAO dao) {
+    public VendingMachineServiceLayerImpl(VendingMachineDAO dao,VendingMachineAuditDAO auditDao ) {
         this.dao = dao;
+        this.auditDao = auditDao;
     }
-
+    private VendingMachineAuditDAO auditDao;
     private VendingMachineDAO dao;
 
     @Override
@@ -54,10 +57,9 @@ public class VendingMachineServiceLayerImpl implements VendingMachineServiceLaye
             // this makes inventory not go negative.
             removeSnack.setInventory(1);
             dao.removeSnack(name);
-
             throw new NoItemInventoryException("Snack not available");
         }
-
+        auditDao.writeAuditEntry("Snack " + removeSnack.getSnackName() + " Bought and removed.");
         return removeSnack;
     }
 
