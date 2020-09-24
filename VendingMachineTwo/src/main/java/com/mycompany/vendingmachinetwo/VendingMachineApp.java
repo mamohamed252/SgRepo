@@ -5,6 +5,8 @@
  */
 package com.mycompany.vendingmachinetwo;
 
+import com.mycompany.vendingmachinetwo.DAO.VendingMachineAuditDAO;
+import com.mycompany.vendingmachinetwo.DAO.VendingMachineAuditDAOFileImpl;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAO;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineDAOFileImpl;
@@ -25,7 +27,8 @@ public class VendingMachineApp {
         UserIO myIo = new UserIOConsoleImpl();
         VendingMachineView myView = new VendingMachineView(myIo);
         VendingMachineDAO myDao = new VendingMachineDAOFileImpl();
-        VendingMachineServiceLayer myService = new VendingMachineServiceLayerImpl(myDao);
+        VendingMachineAuditDAO myAuditDao = new VendingMachineAuditDAOFileImpl();
+        VendingMachineServiceLayer myService = new VendingMachineServiceLayerImpl(myDao, myAuditDao);
         VendingMachineController controller = new VendingMachineController(myService, myView);
         controller.run();
     }
