@@ -31,7 +31,8 @@ public class VendingMachineDAOMock implements VendingMachineDAO {
 
     @Override
     public Snack removeSnack(String name) throws VendingMachineDAOException, NoItemInventoryException {
-        Snack nothing = new Snack("nothing");
+        Snack nothing = new Snack(name);
+        nothing.setInventory(-1);
         return nothing;
     }
 

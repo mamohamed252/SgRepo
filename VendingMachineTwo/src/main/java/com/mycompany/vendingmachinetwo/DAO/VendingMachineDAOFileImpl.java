@@ -18,11 +18,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Mohamed
  */
+@Component
 public class VendingMachineDAOFileImpl implements VendingMachineDAO {
     public static String SNACK_FILE = "inventory.txt";
     public VendingMachineDAOFileImpl() {
@@ -53,7 +55,7 @@ public class VendingMachineDAOFileImpl implements VendingMachineDAO {
 
     @Override
     public Snack removeSnack(String name) throws NoItemInventoryException, VendingMachineDAOException {
-        //loadSnack();
+        loadSnack();
         Snack removeSnackCount = snacks.get(name);
         removeSnackCount.setInventory(removeSnackCount.getInventory() - 1);
         writeSnack();

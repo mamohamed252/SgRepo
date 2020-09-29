@@ -8,13 +8,16 @@ package com.mycompany.vendingmachinetwo.UI;
 import com.mycompany.vendingmachinetwo.DTO.Snack;
 import java.math.BigDecimal;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Mohamed
  */
+@Component
 public class VendingMachineView {
-
+    @Autowired
     public VendingMachineView(UserIO io) {
         this.io = io;
     }

@@ -18,18 +18,22 @@ import com.mycompany.vendingmachinetwo.service.VendingMachineServiceLayer;
 import com.mycompany.vendingmachinetwo.service.VendingMachineServiceLayerImpl;
 import java.math.BigDecimal;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Mohamed
  */
+@Component
 public class VendingMachineController {
 
+    @Autowired
     public VendingMachineController(VendingMachineServiceLayer service, VendingMachineView view) {
         this.view = view;
         this.service = service;
     }
-    
+
     private VendingMachineServiceLayer service;
     private VendingMachineView view;
     private UserIO io = new UserIOConsoleImpl();
@@ -69,7 +73,7 @@ public class VendingMachineController {
         view.displayExitBanner();
     }
 
-    private void getUserCost() throws VendingMachineDAOException, InsufficientFundsException  {
+    private void getUserCost() throws VendingMachineDAOException, InsufficientFundsException {
         BigDecimal userCostBD = new BigDecimal(-1);
 
         try {
@@ -99,7 +103,8 @@ public class VendingMachineController {
         view.displaySnackNotAvailable(change);
 
     }
-    private void displayException(String exception){
+
+    private void displayException(String exception) {
         view.displayException(exception);
     }
 }

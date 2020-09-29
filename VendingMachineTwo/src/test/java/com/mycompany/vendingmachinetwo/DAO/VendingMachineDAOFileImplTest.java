@@ -37,6 +37,7 @@ public class VendingMachineDAOFileImplTest {
         //String file = "VendingMachineUnitTest.txt";
        FileWriter fw =  new FileWriter(newTestFile);
        fw.append("kitkat::1.25::4::");
+       fw.flush();
        fw.close();
         newTestDao = new VendingMachineDAOFileImpl(newTestFile);
 
@@ -72,10 +73,15 @@ public class VendingMachineDAOFileImplTest {
 
     @Test
     public void testRemoveSnack() throws Exception {
-        int removeSnack = newTestDao.removeSnack("kitkat").getInventory();
+        Snack testSnack = new Snack("kitkat", new BigDecimal("1.25"), 4);
+        Snack removeSnack = newTestDao.removeSnack("kitkat");
+        
+        int removedSnack = newTestDao.removeSnack("kitkat").getInventory();
         int newSnack = newTestDao.getSnack("kitkat").getInventory();
+        
+        
 
-        assertEquals(newSnack, removeSnack, "Expected to be Expected to be kitkat 1.25 3");
+        assertEquals(newSnack, removedSnack, "Expected to be Expected to be kitkat 1.25 3");
 
     }
 }

@@ -11,6 +11,7 @@ import java.util.Scanner;
  *
  * @author Mohamed
  */
+
 public class UserIOConsoleImpl implements UserIO{
     Scanner sc = new Scanner(System.in);
 
