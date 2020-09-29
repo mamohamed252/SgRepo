@@ -7,11 +7,14 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.2.RELEASE</version>
         </dependency>
         <dependency>
+=======
+>>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.3.1</version>

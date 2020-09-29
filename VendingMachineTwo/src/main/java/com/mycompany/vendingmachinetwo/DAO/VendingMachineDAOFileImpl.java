@@ -38,7 +38,7 @@ public class VendingMachineDAOFileImpl implements VendingMachineDAO {
      // Moved to line 28 because its not final anymore
     //public static final String SNACK_FILE = "inventory.txt";
     public static final String DELIMITER = "::";
-    private Map<String, Snack> snacks = new HashMap<>();
+    private Map<String, Snack> snacks = new HashMap();
 
     @Override
     public List<Snack> getAllSnacks() throws VendingMachineDAOException {

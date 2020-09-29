@@ -6,6 +6,7 @@
 package com.mycompany.vendingmachinetwo.service;
 
 import com.mycompany.vendingmachinetwo.DAO.InsufficientFundsException;
+
 import com.mycompany.vendingmachinetwo.DAO.NoItemInventoryException;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineAuditDAO;
 import com.mycompany.vendingmachinetwo.DAO.VendingMachineAuditDAOMock;
@@ -31,7 +32,6 @@ import org.junit.jupiter.api.Test;
  * @author Mohamed
  */
 public class VendingMachineServiceLayerImplTest {
-
     VendingMachineDAO daoMock = new VendingMachineDAOMock();
     VendingMachineAuditDAO auditMock = new VendingMachineAuditDAOMock();
     VendingMachineServiceLayer testService = new VendingMachineServiceLayerImpl(daoMock, auditMock);
@@ -41,7 +41,6 @@ public class VendingMachineServiceLayerImplTest {
 
     @BeforeEach
     public void setUp() {
-
     }
 
     @AfterEach
@@ -107,7 +106,6 @@ public class VendingMachineServiceLayerImplTest {
         }
 
         assertEquals(removeSnackTest.getInventory(), 0, "Expected inventory to be set to 0");
-
     }
 
     @Test

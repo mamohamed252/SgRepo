@@ -33,7 +33,6 @@ public class VendingMachineController {
         this.view = view;
         this.service = service;
     }
-
     private VendingMachineServiceLayer service;
     private VendingMachineView view;
     private UserIO io = new UserIOConsoleImpl();
@@ -103,7 +102,6 @@ public class VendingMachineController {
         view.displaySnackNotAvailable(change);
 
     }
-
     private void displayException(String exception) {
         view.displayException(exception);
     }

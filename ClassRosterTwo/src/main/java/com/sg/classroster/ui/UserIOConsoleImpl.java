@@ -11,7 +11,10 @@ import java.util.Scanner;
  *
  * @author Mohamed
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
 public class UserIOConsoleImpl implements UserIO{
     Scanner sc = new Scanner(System.in);
 

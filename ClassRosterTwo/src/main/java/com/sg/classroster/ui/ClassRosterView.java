@@ -12,7 +12,10 @@ import java.util.List;
  *
  * @author Mohamed
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
 public class ClassRosterView {
 
     private UserIO io;
