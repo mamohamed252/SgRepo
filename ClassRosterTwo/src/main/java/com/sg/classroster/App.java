@@ -15,12 +15,10 @@ import com.sg.classroster.service.ClassRosterServiceLayerImpl;
 import com.sg.classroster.ui.ClassRosterView;
 import com.sg.classroster.ui.UserIO;
 import com.sg.classroster.ui.UserIOConsoleImpl;
-<<<<<<< HEAD
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-=======
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
+
 
 /**
  *
@@ -29,7 +27,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
+
 //        UserIO myIo = new UserIOConsoleImpl();
 //        ClassRosterView myView = new ClassRosterView(myIo);
 //        ClassRosterDAO myDao = new ClassRosterDAOFileImpl();
@@ -41,15 +39,6 @@ public class App {
 ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 ClassRosterController controller = ctx.getBean("controller", ClassRosterController.class);
 controller.run();
-=======
-        UserIO myIo = new UserIOConsoleImpl();
-        ClassRosterView myView = new ClassRosterView(myIo);
-        ClassRosterDAO myDao = new ClassRosterDAOFileImpl();
-        ClassRosterAuditDAO myAuditDAO = new ClassRosterAuditDAOFileImpl();
-        ClassRosterServiceLayer myService = new ClassRosterServiceLayerImpl(myDao, myAuditDAO);
-        ClassRosterController controller = new ClassRosterController(myService, myView);
-        controller.run();
 
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
     }
 }

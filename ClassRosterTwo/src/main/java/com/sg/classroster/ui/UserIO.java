@@ -5,6 +5,8 @@
  */
 package com.sg.classroster.ui;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author Mohamed
@@ -30,4 +32,8 @@ public interface UserIO {
     long readLong(String prompt, long min, long max);
 
     String readString(String prompt);
+
+    BigDecimal readBigDecimal(String prompt);
+
+    BigDecimal readBigDecimal(String prompt, BigDecimal min, BigDecimal max);
 }

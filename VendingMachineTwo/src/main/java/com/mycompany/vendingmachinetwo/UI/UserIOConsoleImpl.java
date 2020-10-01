@@ -6,19 +6,13 @@
 package com.mycompany.vendingmachinetwo.UI;
 
 import java.util.Scanner;
-<<<<<<< HEAD
 import org.springframework.stereotype.Component;
-=======
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
 
 /**
  *
  * @author Mohamed
  */
-<<<<<<< HEAD
 @Component
-=======
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
 public class UserIOConsoleImpl implements UserIO {
 Scanner sc = new Scanner(System.in);
 

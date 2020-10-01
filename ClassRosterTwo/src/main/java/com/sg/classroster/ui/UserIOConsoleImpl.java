@@ -5,16 +5,13 @@
  */
 package com.sg.classroster.ui;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
  *
  * @author Mohamed
  */
-<<<<<<< HEAD
-
-=======
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
 public class UserIOConsoleImpl implements UserIO{
     Scanner sc = new Scanner(System.in);
 
@@ -109,6 +106,28 @@ public class UserIOConsoleImpl implements UserIO{
             }
 
         } while (value < min || value > max);
+        return value;
+    }
+
+    @Override
+    public BigDecimal readBigDecimal(String prompt) {
+       print(prompt);
+       BigDecimal newBigDecimal = new BigDecimal(sc.nextLine());
+       return newBigDecimal;
+    }
+
+    @Override
+    public BigDecimal readBigDecimal(String prompt, BigDecimal min, BigDecimal max) {
+        BigDecimal value = new BigDecimal(sc.nextLine());
+       
+        do {
+            print(prompt);
+            value = new BigDecimal(sc.nextLine());
+            if (value.compareTo(min)== -1 || value.compareTo(max)== 1){
+                print("Error value outside of range!!!");
+            }
+
+        } while (value.compareTo(min)== -1 || value.compareTo(max)== 1 );
         return value;
     }
     

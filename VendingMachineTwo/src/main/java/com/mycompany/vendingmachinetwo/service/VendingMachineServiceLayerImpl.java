@@ -16,26 +16,17 @@ import com.mycompany.vendingmachinetwo.UI.VendingMachineView;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-=======
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
 
 /**
  *
  * @author Mohamed
  */
-<<<<<<< HEAD
 @Component
 public class VendingMachineServiceLayerImpl implements VendingMachineServiceLayer {
    
    @Autowired
-=======
-public class VendingMachineServiceLayerImpl implements VendingMachineServiceLayer {
-   
-
->>>>>>> 0532c8b3b7510e848db49a296f99952219f27fb3
     public VendingMachineServiceLayerImpl(VendingMachineDAO dao,VendingMachineAuditDAO auditDao ) {
         this.dao = dao;
         this.auditDao = auditDao;
